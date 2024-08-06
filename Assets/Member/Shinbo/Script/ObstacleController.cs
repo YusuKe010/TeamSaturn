@@ -19,14 +19,13 @@ public class ObstacleController : MonoBehaviour
         if (player.transform.position.x > transform.position.x) rb.velocity = Vector3.right * _speed;
         else rb.velocity = Vector3.left * _speed;
 
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 3);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            //タイムを減らすためのスクリプトを取得する
             ObstacleCollision();
         }
     }

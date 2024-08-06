@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90368c9061d09b147abf41e03b8c739d, type: 3}
+  m_Name: ItemGetSe
+  m_EditorClassIdentifier: 
+  _all:
+  - Key: Invincivle
+    Clip: {fileID: 8300000, guid: 0caa9d06460cab943a5cfe0290344ea8, type: 3}
+    Volume: 0.398
+  - Key: Jump
+    Clip: {fileID: 0}
+    Volume: 0
