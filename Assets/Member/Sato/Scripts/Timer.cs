@@ -96,7 +96,8 @@ public class Timer : MonoBehaviour
     /// </summary>
     public static float GetCurrentTime()
     {
-        return Instance._time;
+        if (Instance == null) return -1;
+        else return Instance._time;
     }
 
     /// <summary>
@@ -104,6 +105,6 @@ public class Timer : MonoBehaviour
     /// </summary>
     public static void IncreaseTime(float value)
     {
-        Instance._time += value;
+        if (Instance != null) Instance._time += value;
     }
 }
