@@ -23,6 +23,8 @@ namespace FSM
         protected override void Stay()
         {
             Debug.Log("オープニング中");
+
+            if (Input.GetKeyDown(KeyCode.Space)) TryChangeState(StateIdentifier.Playing);
         }
     }
 }
