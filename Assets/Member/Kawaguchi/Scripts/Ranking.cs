@@ -65,7 +65,7 @@ public class Ranking : MonoBehaviour
         {
             Debug.LogError("データ受信失敗" + request.result);
         }
-        action();
+        action?.Invoke();
     }
 
     public void PostData(string userName, int score, Action action)
@@ -100,6 +100,6 @@ public class Ranking : MonoBehaviour
         {
             Debug.Log("データ送信失敗" + request.result);
         }
-        action();
+        action?.Invoke();
     }
 }
