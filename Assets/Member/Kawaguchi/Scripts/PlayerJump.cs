@@ -1,37 +1,36 @@
-using System;
 using UnityEngine;
 
 public class PlayerJump : MonoBehaviour
 {
 	[SerializeField] private float _jumpPower;
+	[SerializeField] private PlayerInput _playerInput;
 
-	private PlayerInput _playerInput;
-	private Rigidbody _rb;
-
+	[SerializeField] private Rigidbody _rb;
 	private Vector3 _dir;
 	private Vector3 _savePos;
 
-	private bool _isGround;
 	private float _currentJumpPower;
+	private bool _isGround;
+
 
 	private void Start()
 	{
-		_playerInput = GetComponent<PlayerInput>();
-		_rb = GetComponent<Rigidbody>();
 		Initialize();
-	}
-
-	void Initialize()
-	{
-		_currentJumpPower = _jumpPower;
 	}
 
 	private void Update()
 	{
-		if (Input.GetKeyDown(_playerInput.JumpKey) )
-		{
-			Jump();
-		}
+		if (Input.GetKeyDown(_playerInput.JumpKey) && _isGround) Jump();
+	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.CompareTag("Ground") && _rb.velocity.y < 0) _isGround = true;
+	}
+
+	private void Initialize()
+	{
+		_currentJumpPower = _jumpPower;
 	}
 
 	//右左ジャンプ
@@ -41,17 +40,12 @@ public class PlayerJump : MonoBehaviour
 		_rb.AddForce(Vector3.up * _currentJumpPower, ForceMode.Impulse);
 	}
 
-	private void OnTriggerEnter(Collider other)
-	{
-		_isGround = true;
-	}
-
 	public void JumpPowerUp(float value)
 	{
 		_currentJumpPower *= value;
 	}
 
-	public void JumpPowerDown()
+	public void JumpPowerReturn()
 	{
 		_currentJumpPower = _jumpPower;
 	}
