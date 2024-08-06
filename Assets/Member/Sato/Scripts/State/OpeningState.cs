@@ -25,8 +25,7 @@ namespace FSM
         {
             Debug.Log("オープニング中");
 
-            // 仮でキー入力でゲームスタート
-            if (Input.GetKeyDown(KeyCode.Space)) TryChangeState(StateIdentifier.Playing);
+            TryChangeState(StateIdentifier.Playing);
         }
     }
 }

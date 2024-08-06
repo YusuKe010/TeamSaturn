@@ -20,6 +20,8 @@ public class ScoreManager : MonoBehaviour
 
     // 1ゲームごとにスコアを管理する想定なので変数は1つで十分。
     Score _score;
+    // スコアランキング。アプリケーション終了時にリセットされる。
+    List<Score> _ranking;
 
     void Awake()
     {

@@ -97,14 +97,22 @@ public class Timer : MonoBehaviour
     public static float GetCurrentTime()
     {
         if (Instance == null) return -1;
-        else return Instance._time;
+        else return Mathf.Max(0, Instance._time);
     }
 
     /// <summary>
-    /// 残り時間を増減させる。
+    /// 残り時間を増加させる。
     /// </summary>
     public static void IncreaseTime(float value)
     {
         if (Instance != null) Instance._time += value;
+    }
+
+    /// <summary>
+    /// 残り時間を減少させる。
+    /// </summary>
+    public static void DecreaseTime(float value)
+    {
+        IncreaseTime(-value);
     }
 }
