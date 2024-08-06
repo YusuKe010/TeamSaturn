@@ -29,21 +29,13 @@ public class Ranking : MonoBehaviour
     private List<Record> _ranking = new();
     public List<Record> GetRanking => _ranking;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            StartCoroutine(GetData());
-        }
-    }
-
+    
     public void GetData(Action action)
     {
-        StartCoroutine(GetData());
-        action();
+        StartCoroutine(GetDataAsync(action));
     }
 
-    public IEnumerator GetData()
+    public IEnumerator GetDataAsync(Action action)
     {
         Debug.Log("データ受信開始・・・");
         var request = UnityWebRequest.Get("https://script.google.com/macros/s/" + accessKey + "/exec");
@@ -77,11 +69,10 @@ public class Ranking : MonoBehaviour
 
     public void PostData(string userName, int score, Action action)
     {
-        StartCoroutine(PostData(userName, score));
-        action();
+        StartCoroutine(PostDataAsync(userName, score, action));
     }
 
-    private IEnumerator PostData(string username, int score)
+    private IEnumerator PostDataAsync(string username, int score, Action action)
     {
         Debug.Log("データ送信開始・・・");
         var form = new WWWForm();
@@ -108,6 +99,6 @@ public class Ranking : MonoBehaviour
         {
             Debug.Log("データ送信失敗" + request.result);
         }
-
+        action();
     }
 }
