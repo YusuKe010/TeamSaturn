@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSpawn:
-  - {fileID: 1087616337162655963, guid: 02a98d1a0466b4b4293b078de74ac29a, type: 3}
+  - {fileID: 1129655553814955982, guid: 02a98d1a0466b4b4293b078de74ac29a, type: 3}
+  - {fileID: 3191124438236639235, guid: 0a013cc392beee04a94f5ef248b55f23, type: 3}
   CloudSpawn: []
   verticalOffsetY: 3
   verticalOffsetX: 3
