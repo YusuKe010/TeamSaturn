@@ -22,7 +22,8 @@ public class Record
 
 public class Ranking : MonoBehaviour
 {
-    [SerializeField] private Text _rankingText;
+    [SerializeField] private Text _nameText;
+    [SerializeField] private Text _scoreText;
     [SerializeField] private string accessKey;
     [SerializeField] private int _rankingCount = 3;
     private List<Record> _ranking = new();
@@ -34,6 +35,12 @@ public class Ranking : MonoBehaviour
         {
             StartCoroutine(GetData());
         }
+    }
+
+    public void GetData(Action action)
+    {
+        StartCoroutine(GetData());
+        action();
     }
 
     public IEnumerator GetData()
@@ -52,7 +59,8 @@ public class Ranking : MonoBehaviour
                 _ranking.Sort((x, y) => y.score - x.score);
                 for (int i = 0; i < _rankingCount; i++)
                 {
-                    _rankingText.text += "Name:" + _ranking[i].name + " Score:" + _ranking[i].score + "\n";
+                    _nameText.text += $"{i + 1}位 {_ranking[i].name}\n";
+                    _scoreText.text += $"Score:{_ranking[i].score}\n";
                     Debug.Log("Name:" + _ranking[i].name + "Score:" + _ranking[i].score);
                 }
             }
@@ -67,7 +75,13 @@ public class Ranking : MonoBehaviour
         }
     }
 
-    public IEnumerator PostData(string username, int score)
+    public void PostData(string userName, int score, Action action)
+    {
+        StartCoroutine(PostData(userName, score));
+        action();
+    }
+
+    private IEnumerator PostData(string username, int score)
     {
         Debug.Log("データ送信開始・・・");
         var form = new WWWForm();
@@ -94,5 +108,6 @@ public class Ranking : MonoBehaviour
         {
             Debug.Log("データ送信失敗" + request.result);
         }
+
     }
 }
