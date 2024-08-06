@@ -20,7 +20,7 @@ public class PlayerStoker : MonoBehaviour
     void Update()
     {
         playerPos = player.transform.position;
-        this.transform.position = new Vector3(0,playerPos.y, 0);
+        this.transform.position = new Vector3(0,playerPos.y + 0.5f, 0);
         //ThisPosition.y = playerPos.y;
         Debug.Log(ThisPosition.y);
 
