@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Title
 {
-    public class Campaign : TitleContent
+    public class Campaign : ButtonContent
     {
         protected override void OnOpenButtonClick()
         {

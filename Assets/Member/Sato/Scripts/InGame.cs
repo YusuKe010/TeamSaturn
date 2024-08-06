@@ -16,6 +16,7 @@ public class InGame : MonoBehaviour
         _states.Add(StateIdentifier.Clear, new ClearState(_states));
         _states.Add(StateIdentifier.GameOver, new GameOverState(_states));
         _states.Add(StateIdentifier.Retry, new RetryState(_states));
+        _states.Add(StateIdentifier.Result, new ResultState(_states));
 
         _currentState = _states[StateIdentifier.Opening];
     }

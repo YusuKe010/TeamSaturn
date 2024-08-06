@@ -12,7 +12,8 @@ namespace FSM
 
         protected override void Enter()
         {
-            Debug.Log("オープニング開始");
+            // スコアをリセット。
+            ScoreManager.ResetScore();
         }
 
         protected override void Exit()
@@ -24,6 +25,7 @@ namespace FSM
         {
             Debug.Log("オープニング中");
 
+            // 仮でキー入力でゲームスタート
             if (Input.GetKeyDown(KeyCode.Space)) TryChangeState(StateIdentifier.Playing);
         }
     }

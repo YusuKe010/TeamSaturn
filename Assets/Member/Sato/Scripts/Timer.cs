@@ -26,7 +26,6 @@ public class Timer : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -98,5 +97,13 @@ public class Timer : MonoBehaviour
     public static float GetCurrentTime()
     {
         return Instance._time;
+    }
+
+    /// <summary>
+    /// c‚èŠÔ‚ğ‘Œ¸‚³‚¹‚éB
+    /// </summary>
+    public static void IncreaseTime(float value)
+    {
+        Instance._time += value;
     }
 }

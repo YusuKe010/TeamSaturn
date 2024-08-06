@@ -10,15 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90368c9061d09b147abf41e03b8c739d, type: 3}
-  m_Name: AudioTable_Temp
+  m_Name: AudioTable_Sato
   m_EditorClassIdentifier: 
   _all:
-  - Key: BGM_Temp
-    Clip: {fileID: 8300000, guid: e7c2a59e64e48564891baf66de2a5fc6, type: 3}
-    Volume: 0.2
-  - Key: SE_ButtonHover_Temp
-    Clip: {fileID: 8300000, guid: 506eead0ba9596e498e72af585f92a25, type: 3}
-    Volume: 1
-  - Key: SE_ButtonSubmit_Temp
-    Clip: {fileID: 8300000, guid: 0caa9d06460cab943a5cfe0290344ea8, type: 3}
-    Volume: 1
+  - Key: SE_Timeup
+    Clip: {fileID: 8300000, guid: 65adfb26d489c5d4ababc481d9df70eb, type: 3}
+    Volume: 0.5
