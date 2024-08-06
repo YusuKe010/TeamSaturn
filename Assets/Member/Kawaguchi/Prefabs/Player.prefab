@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 7052914634960548835}
   - component: {fileID: 104803535091003244}
   - component: {fileID: 7937859425007280666}
+  - component: {fileID: 2727105215368201150}
   - component: {fileID: 859667526068440977}
+  - component: {fileID: 7243169690322121005}
   - component: {fileID: 4987291597308205702}
   - component: {fileID: 5400948234810509317}
   m_Layer: 0
@@ -108,6 +110,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2727105215368201150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992189151691726606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 086ee9356d926214cb1c7c10971b6a47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _jumpKey: 32
+  _leftKey: 97
+  _rightKey: 100
 --- !u!114 &859667526068440977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,13 +137,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36fa8e02ef2584842b7e27ebc04a0ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jump: 32
-  _left: 97
-  _right: 100
-  _rightDir: {x: 5, y: 10, z: 0}
-  _leftDir: {x: -5, y: 10, z: 0}
-  _centerDir: {x: 0, y: 10, z: 0}
-  _fallDir: {x: 0, y: -10, z: 0}
+  _jumpPower: 5
+--- !u!114 &7243169690322121005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992189151691726606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f7987d134cce547b6ecb3fcd877cb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveSpeed: 5
 --- !u!54 &4987291597308205702
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -151,7 +175,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!135 &5400948234810509317
