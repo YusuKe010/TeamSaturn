@@ -28,6 +28,14 @@ public class Ranking : MonoBehaviour
     private List<Record> _ranking = new();
     public List<Record> GetRanking => _ranking;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            StartCoroutine(GetData());
+        }
+    }
+
     public IEnumerator GetData()
     {
         Debug.Log("データ受信開始・・・");
@@ -76,12 +84,6 @@ public class Ranking : MonoBehaviour
             {
                 var records = JsonUtility.FromJson<Records>(request.downloadHandler.text).records;
                 Debug.Log("データ送信成功！");
-
-                for (int i = 0; i < _rankingCount; i++)
-                {
-                    Debug.Log("Name:" + _ranking[i].name + " Score:" + _ranking[i].score);
-                    _rankingText.text += "Name:" + _ranking[i].name + "Score:" + _ranking[i].score + "\n";
-                }
             }
             else
             {
