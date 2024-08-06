@@ -29,7 +29,7 @@ public class CustomButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHa
 
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
-        AudioPlayer.PlaySE("SE_ButtonSubmit_Temp");
+        AudioPlayer.PlaySE("SE_ButtonSubmit");
         OnClick?.Invoke();
     }
 

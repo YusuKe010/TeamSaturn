@@ -14,5 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _all:
   - Key: SE_Timeup
-    Clip: {fileID: 8300000, guid: 65adfb26d489c5d4ababc481d9df70eb, type: 3}
+    Clip: {fileID: 8300000, guid: 37d98945c911aa04881389e15ce8fe23, type: 3}
+    Volume: 0.5
+  - Key: BGM_Title
+    Clip: {fileID: 8300000, guid: adfb7846ad671264eb973aae73ac07b5, type: 3}
+    Volume: 0.5
+  - Key: BGM_InGame
+    Clip: {fileID: 8300000, guid: 4af3ee578171aae45bc6fc0aae091e5d, type: 3}
+    Volume: 0.5
+  - Key: BGM_Result
+    Clip: {fileID: 8300000, guid: 828129a05ce9c97459c53476001b4307, type: 3}
+    Volume: 0.5
+  - Key: SE_ButtonSubmit
+    Clip: {fileID: 8300000, guid: abbc761ce9181f14cae646ff9388ce13, type: 3}
     Volume: 0.5
