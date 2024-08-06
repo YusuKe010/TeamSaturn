@@ -6,6 +6,8 @@ public class ObjectSpawner : MonoBehaviour
     public GameObject[] objectToSpawn;  // オブジェクトプレハブ
     [Header("空中で生成するオブジェクト")]
     public GameObject[] CloudSpawn;  // オブジェクトプレハブ
+    [Header("アイテム")]
+    public GameObject[] ItemSpawn;  // オブジェクトプレハブ
     [Header("縦の生成間隔")]
     public float verticalOffsetY = 5f; // スポーンする間隔
     [Header("横の生成半径")]
