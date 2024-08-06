@@ -137,7 +137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36fa8e02ef2584842b7e27ebc04a0ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpPower: 5
+  _jumpPower: 10
+  _playerInput: {fileID: 2727105215368201150}
+  _rb: {fileID: 4987291597308205702}
 --- !u!114 &7243169690322121005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 5
+  _playerInput: {fileID: 2727105215368201150}
+  _rb: {fileID: 4987291597308205702}
 --- !u!54 &4987291597308205702
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,13 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
 	[SerializeField] private float _moveSpeed;
-	private PlayerInput _playerInput;
-	private Rigidbody _rb;
+	[SerializeField] private PlayerInput _playerInput;
+	[SerializeField] private Rigidbody _rb;
 	private Vector3 _dir;
 
 	private void Start()
