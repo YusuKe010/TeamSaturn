@@ -19,6 +19,7 @@ public class ObstacleController : MonoBehaviour
         if (player.transform.position.x > transform.position.x) rb.velocity = Vector3.right * _speed;
         else rb.velocity = Vector3.left * _speed;
 
+        Destroy(gameObject, 5f);
     }
 
     private void OnTriggerEnter(Collider other)
