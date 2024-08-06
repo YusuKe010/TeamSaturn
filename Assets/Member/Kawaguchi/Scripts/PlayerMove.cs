@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
@@ -5,7 +6,6 @@ public class PlayerMove : MonoBehaviour
 	[SerializeField] private float _moveSpeed;
 	[SerializeField] private PlayerInput _playerInput;
 	[SerializeField] private Rigidbody _rb;
-	private Vector3 _dir;
 
 	private void Start()
 	{
@@ -15,7 +15,11 @@ public class PlayerMove : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		_dir = new Vector3(_playerInput.InputValue * _moveSpeed, _rb.velocity.y, 0);
-		_rb.velocity = _dir;
+		Move(new Vector3(_playerInput.InputValue * _moveSpeed, _rb.velocity.y, 0));
+	}
+
+	void Move( Vector3 dir)
+	{
+		_rb.velocity = dir;
 	}
 }

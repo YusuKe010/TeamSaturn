@@ -22,10 +22,14 @@ public class PlayerJump : MonoBehaviour
 	{
 		if (Input.GetKeyDown(_playerInput.JumpKey) && _isGround) Jump();
 	}
+    private void LateUpdate()
+    {
+        if(this.transform.position.z != 0) transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+    }
 
-	private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
 	{
-		if (other.CompareTag("Ground") && _rb.velocity.y < 0) _isGround = true;
+		if (other.CompareTag("Ground") && _rb.velocity.y <= 0) _isGround = true;
 	}
 
 	private void Initialize()
