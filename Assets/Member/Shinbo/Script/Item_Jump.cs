@@ -20,7 +20,9 @@ public class Item_Jump : ItemController
     public override void ItemGet()
     {
         _playerJump.JumpPowerUp(_jumpForceMultiplier);
-        Debug.Log("Jump UP");
+        AudioPlayer.PlaySE("Invincible");
+        Destroy(gameObject, 1);
+        Debug.Log("ジャンプ力上昇中");
         StartCoroutine(Release());
     }
 
