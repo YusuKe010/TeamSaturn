@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Title
 {
-    public class Option : TitleContent
+    public class Option : ButtonContent
     {
         [SerializeField] GameObject _option;
         [SerializeField] Button _closeButton;

@@ -6,6 +6,11 @@ namespace FSM
 {
     public class PlayingState : State
     {
+        // 時間切れ直前のSEを再生する残り時間。
+        const float TimeupSePlayTime = 2.0f;
+
+        // 時間切れ直前のSEを再生中かのフラグ。
+        bool _isTimeupSePlaying;
         // タイマーの時間の計測が終了したフラグ。
         bool _isTimerEnd;
 
@@ -23,11 +28,21 @@ namespace FSM
         {
             Timer.Stop();
             Timer.ReleaseOnTimerStop(TimerEnd);
-            Debug.Log("終わりだよこのステート");
         }
 
         protected override void Stay()
         {
+            // 仮で毎フレームスコアを加算。
+            ScoreManager.AddScore(1);
+
+            // 時間切れ直前のSE再生。
+            if (Timer.GetCurrentTime() < TimeupSePlayTime && !_isTimeupSePlaying)
+            {
+                _isTimeupSePlaying = true;
+                AudioPlayer.PlaySE("SE_Timeup");
+            }
+
+            // 時間切れでクリア状態に遷移。
             if (_isTimerEnd) TryChangeState(StateIdentifier.Clear);
         }
 
