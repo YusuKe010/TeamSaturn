@@ -19,20 +19,23 @@ public class Item_Invincible : ItemController
     {
         foreach (var obj in _obstacleObj)
         {
-            BoxCollider col = obj.GetComponent<BoxCollider>();
+            Collider col = obj.GetComponent<Collider>();
             col.enabled = false;
+            AudioPlayer.PlaySE("Invincible");
             StartCoroutine(Release());
         }
     }
 
     IEnumerator Release()
     {
+        Debug.Log("入手");
         yield return new WaitForSeconds(_releaseSeconds);
 
         foreach (var obj in _obstacleObj)
         {
-            BoxCollider col = obj.GetComponent<BoxCollider>();
+            Collider col = obj.GetComponent<Collider>();
             col.enabled = true;
         }
+        Destroy(gameObject);
     }
 }
