@@ -29,6 +29,7 @@ public class PlayerCensor : MonoBehaviour
             // プレイヤーが上にある場合、コライダーを有効化
             if (objectCollider != null)
             {
+                Debug.Log("あたった！");
                 objectCollider.enabled = true;
             }
         }
