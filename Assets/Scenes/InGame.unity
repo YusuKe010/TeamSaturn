@@ -153,6 +153,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &58554859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 592339457890286271, guid: c3e8607d57412fd4ba46b333340f80d8, type: 3}
+  m_PrefabInstance: {fileID: 66511947}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &66511947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -263,6 +268,71 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 992189151691726606, guid: c3e8607d57412fd4ba46b333340f80d8, type: 3}
   m_PrefabInstance: {fileID: 66511947}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &76018318
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1174149200026446776, guid: cbb41bcf057af8449b2d42ee8c9e7dfb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174149200026446776, guid: cbb41bcf057af8449b2d42ee8c9e7dfb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174149200026446776, guid: cbb41bcf057af8449b2d42ee8c9e7dfb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174149200026446776, guid: cbb41bcf057af8449b2d42ee8c9e7dfb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174149200026446776, guid: cbb41bcf057af8449b2d42ee8c9e7dfb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174149200026446776, guid: cbb41bcf057af8449b2d42ee8c9e7dfb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174149200026446776, guid: cbb41bcf057af8449b2d42ee8c9e7dfb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174149200026446776, guid: cbb41bcf057af8449b2d42ee8c9e7dfb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174149200026446776, guid: cbb41bcf057af8449b2d42ee8c9e7dfb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174149200026446776, guid: cbb41bcf057af8449b2d42ee8c9e7dfb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6849505621425268689, guid: cbb41bcf057af8449b2d42ee8c9e7dfb, type: 3}
+      propertyPath: _rangeLower
+      value: 
+      objectReference: {fileID: 1304108792}
+    - target: {fileID: 6849505621425268689, guid: cbb41bcf057af8449b2d42ee8c9e7dfb, type: 3}
+      propertyPath: _rangeUpper
+      value: 
+      objectReference: {fileID: 564843664}
+    - target: {fileID: 8663639910942592158, guid: cbb41bcf057af8449b2d42ee8c9e7dfb, type: 3}
+      propertyPath: m_Name
+      value: ObstacleGenerator2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cbb41bcf057af8449b2d42ee8c9e7dfb, type: 3}
 --- !u!1 &98105231
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,6 +503,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accessKey: AKfycbx0-Xfxrqz8lPTDeIQjO2t8ZzvS3bQQQQ4w1Mx9k04BsNWTXqD7Abv0LWUUT7tJcEjk
+--- !u!1 &352230735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5256850483007313490, guid: c3e8607d57412fd4ba46b333340f80d8, type: 3}
+  m_PrefabInstance: {fileID: 66511947}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &402544491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -600,6 +675,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d058af31e110c24eb27c6d767036b31, type: 3}
+--- !u!1 &564843664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 592339457890286271, guid: 4cffb5b048824bc47824a76ea449b472, type: 3}
+  m_PrefabInstance: {fileID: 402544491}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &592962278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -995,6 +1075,10 @@ PrefabInstance:
       propertyPath: _player
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1710760274012664087, guid: f917481f5d873304cb3fa7a5a454e882, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 14c6cdc2aa5f6f548bc7f280f33d0be2, type: 3}
     - target: {fileID: 5307426383126720366, guid: f917481f5d873304cb3fa7a5a454e882, type: 3}
       propertyPath: m_Name
       value: PlayerStatusCanvas2
@@ -1396,6 +1480,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d10f18da2b8463b48b2f20b42a988f27, type: 3}
+--- !u!1 &1304108792 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5256850483007313490, guid: 4cffb5b048824bc47824a76ea449b472, type: 3}
+  m_PrefabInstance: {fileID: 402544491}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1331534170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1885,14 +1974,14 @@ PrefabInstance:
     - target: {fileID: 6849505621425268689, guid: cbb41bcf057af8449b2d42ee8c9e7dfb, type: 3}
       propertyPath: _rangeLower
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 352230735}
     - target: {fileID: 6849505621425268689, guid: cbb41bcf057af8449b2d42ee8c9e7dfb, type: 3}
       propertyPath: _rangeUpper
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 58554859}
     - target: {fileID: 8663639910942592158, guid: cbb41bcf057af8449b2d42ee8c9e7dfb, type: 3}
       propertyPath: m_Name
-      value: ObstacleGenerator
+      value: ObstacleGenerator1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2179,6 +2268,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1710760274012664087, guid: f917481f5d873304cb3fa7a5a454e882, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 98682f4caf12e854ba4d964585b2cba5, type: 3}
     - target: {fileID: 5307426383126720366, guid: f917481f5d873304cb3fa7a5a454e882, type: 3}
       propertyPath: m_Name
       value: PlayerStatusCanvas1
@@ -2437,6 +2530,7 @@ SceneRoots:
   - {fileID: 6569283728569118649}
   - {fileID: 528877949}
   - {fileID: 1678656388}
+  - {fileID: 76018318}
   - {fileID: 1058003432}
   - {fileID: 819110238}
   - {fileID: 1226368289}
