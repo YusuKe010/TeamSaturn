@@ -134,6 +134,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nameText: {fileID: 6975077263914961418}
   _scoreText: {fileID: 4684791665841800037}
+  _player1Name: {fileID: 0}
+  _player2Name: {fileID: 0}
   _rankingCount: 5
   _rankings: {fileID: 1217969144232214137}
 --- !u!1 &3256989273234715220
@@ -284,7 +286,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 5
     m_MaxSize: 50
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
@@ -340,7 +342,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 159.7, y: 91}
+  m_AnchoredPosition: {x: 159.7, y: 209}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3873830007547858681
@@ -419,7 +421,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -424.87, y: 68}
+  m_AnchoredPosition: {x: -424.87, y: 205}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3406249557347304422
