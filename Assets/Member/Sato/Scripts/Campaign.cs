@@ -26,13 +26,12 @@ namespace Title
 
         IEnumerator RunAsync()
         {
-
-
-            UserNameHolder.SetPlayerName(UserNameHolder.Player.Player1, "プレイヤー1");
-            UserNameHolder.SetPlayerName(UserNameHolder.Player.Player2, "プレイヤー2");
-
             string p1Name = _player1InputField.text;
             string p2Name = _player2InputField.text;
+
+            if (p1Name == string.Empty) p1Name = "プレイヤー1";
+            if (p2Name == string.Empty) p2Name = "プレイヤー2";
+
             UserNameHolder.SetPlayerName(UserNameHolder.Player.Player1, p1Name);
             UserNameHolder.SetPlayerName(UserNameHolder.Player.Player2, p2Name);
 
