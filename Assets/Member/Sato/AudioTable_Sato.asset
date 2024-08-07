@@ -28,3 +28,12 @@ MonoBehaviour:
   - Key: SE_ButtonSubmit
     Clip: {fileID: 8300000, guid: abbc761ce9181f14cae646ff9388ce13, type: 3}
     Volume: 0.5
+  - Key: Player_Jump
+    Clip: {fileID: 8300000, guid: c2624c8931855f445b07d8a6569b08a1, type: 3}
+    Volume: 0.49976
+  - Key: Player_Falling
+    Clip: {fileID: 8300000, guid: 36e522987f0c3724f8a88102a937bef7, type: 3}
+    Volume: 0.5
+  - Key: Player_Landing
+    Clip: {fileID: 8300000, guid: fd8184e4e4068e4449c6c7e8192a8f82, type: 3}
+    Volume: 0.5

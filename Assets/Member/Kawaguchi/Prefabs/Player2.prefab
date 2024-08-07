@@ -102,6 +102,9 @@ MonoBehaviour:
   _jumpPower: 10
   _playerInput: {fileID: 2727105215368201150}
   _rb: {fileID: 4987291597308205702}
+  _playerType: 1
+  _playerDust: {fileID: 2422521799746180013, guid: e56dddd0f7f90ca4e8903b54c9d22e9e, type: 3}
+  _playerLanding: {fileID: 7370771526584179032, guid: d5e84e6924b413140b42b341eaaf6df2, type: 3}
 --- !u!114 &7243169690322121005
 MonoBehaviour:
   m_ObjectHideFlags: 0
