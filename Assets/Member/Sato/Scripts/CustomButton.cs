@@ -35,7 +35,6 @@ public class CustomButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHa
 
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
     {
-        AudioPlayer.PlaySE("SE_ButtonHover_Temp");
         ChangeScale(OnHoverSize);
     }
 

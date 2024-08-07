@@ -12,6 +12,8 @@ public class RankingGetter : MonoBehaviour
     IEnumerator RunAsync()
     {
         Ranking ranking = FindAnyObjectByType<Ranking>();
-        yield return ranking.GetDataAsync(null);
+        RankingUI rankingUI = FindAnyObjectByType<RankingUI>();
+
+        yield return ranking.GetDataAsync(rankingUI.action);
     }
 }

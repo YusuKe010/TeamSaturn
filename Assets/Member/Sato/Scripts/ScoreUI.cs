@@ -7,16 +7,19 @@ public class ScoreUI : MonoBehaviour
 {
     [SerializeField] ScoreManager.Player _player;
 
+    Text _userName;
     Text _value;
 
     void Awake()
     {
-        // 子オブジェクトの時間を表示するテキストの名前がValueになっている前提。
+        // 子オブジェクトのテキストの名前が一致している前提。
         _value = transform.Find("Value").GetComponent<Text>();
+        _userName = transform.Find("UserName").GetComponent<Text>();
     }
 
     void Update()
     {
         _value.text = ScoreManager.GetScoreValue(_player).ToString();
+        _userName.text = ScoreManager.GetScoreName(_player);
     }
 }

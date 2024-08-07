@@ -8,6 +8,7 @@ using UnityEngine;
 public class Score
 {
     public int Value;
+    public string Name;
 }
 
 /// <summary>
@@ -80,8 +81,6 @@ public class ScoreManager : MonoBehaviour
     /// </summary>
     public static void SetScore(Player player, int value)
     {
-        Debug.Log(value + "をセット");
-
         if (Instance != null)
         {
             PlayerScore(player).Value = Mathf.Max(0, value);
@@ -89,6 +88,21 @@ public class ScoreManager : MonoBehaviour
         else
         {
             Debug.LogWarning($"{nameof(ScoreManager)}のインスタンスがシーン上に存在しないのでスコアをセット不可能。");
+        }
+    }
+
+    /// <summary>
+    /// スコアネームをセット。
+    /// </summary>
+    public static void SetScoreName(Player player, string scoreName)
+    {
+        if (Instance != null)
+        {
+            PlayerScore(player).Name = scoreName;
+        }
+        else
+        {
+            Debug.LogWarning($"{nameof(ScoreManager)}のインスタンスがシーン上に存在しないのでスコアネームをセット不可能。");
         }
     }
 
@@ -105,6 +119,22 @@ public class ScoreManager : MonoBehaviour
         {
             Debug.LogWarning($"{nameof(ScoreManager)}のインスタンスがシーン上に存在しないのでスコアを取得不可能。");
             return -1;
+        }
+    }
+
+    /// <summary>
+    /// スコアネームを取得。
+    /// </summary>
+    public static string GetScoreName(Player player)
+    {
+        if (Instance != null)
+        {
+            return PlayerScore(player).Name;
+        }
+        else
+        {
+            Debug.LogWarning($"{nameof(ScoreManager)}のインスタンスがシーン上に存在しないのでスコアネームを取得不可能。");
+            return "ぷれいや";
         }
     }
 
