@@ -13,8 +13,11 @@ public class ObjectSpawner : MonoBehaviour
     [Header("足場の縦の生成間隔")]
     public float verticalOffsetY = 5f; // スポーンする間隔
     float ItemOffsetY = 0f; // アイテムがスポーンする間隔
-    [Header("足場の横の生成範囲")]
-    public float verticalOffsetX = 50f; // スポーンする間隔
+    [Header("足場の横の生成範囲左")]
+    public float verticalOffsetXLeft = -3f; // スポーンする間隔
+    [Header("足場の横の生成範囲右")]
+    public float verticalOffsetXRight = 3f; // スポーンする間隔
+
     [Header("一度に生成される岩足場の最大数")]
     public int SpownRocklargest = 2;
     [Header("一度に生成される雲足場の最大数")]
@@ -24,8 +27,6 @@ public class ObjectSpawner : MonoBehaviour
     public int FastSpown = 5;
     [Header("雲が出現しだす数")]
     public int CloudSpown = 10;
-    [Header("プレイヤーのプレハブ")]
-    [SerializeField] GameObject PlayerPrefab;
     [Header("プレイヤーのジャンプ")]
     [SerializeField] KeyCode JumpKeyCode = KeyCode.Space;
     int SpawnRnd=1;
@@ -59,13 +60,13 @@ public class ObjectSpawner : MonoBehaviour
     void SpawnObject()
     {
         Vector3 spawnPosition;
-        SpawnRnd = Random.Range(1, 3);
+       
 
         if (CloudSpown >= Objectcount)
         {
 
             SpownCount = Random.Range(1, SpownRocklargest+1);
-            SpownPos = Random.Range(-verticalOffsetX, verticalOffsetX);
+            SpownPos = Random.Range(verticalOffsetXLeft,verticalOffsetXRight);
                 SpawnObj = Random.Range(0, objectToSpawn.Length);
                 // スポーンposition作成
                 spawnPosition = SpawnPosition + new Vector3(SpownPos, verticalOffsetY, 0);
@@ -86,7 +87,7 @@ public class ObjectSpawner : MonoBehaviour
         else
         {
             SpownCount = Random.Range(1, SpownCloudlargest+1);
-            SpownPos = Random.Range(-verticalOffsetX, verticalOffsetX);
+            SpownPos = Random.Range(verticalOffsetXLeft, verticalOffsetXRight);
             SpawnObj = Random.Range(0, CloudSpawn.Length);
 
             // スポーンposition作成
@@ -117,7 +118,7 @@ public class ObjectSpawner : MonoBehaviour
             {
 
                 //SpownCount = Random.Range(1, SpownRocklargest + 1);
-                SpownPos = Random.Range(-verticalOffsetX, verticalOffsetX);
+                SpownPos = Random.Range(verticalOffsetXLeft, verticalOffsetXRight);
 
                 // スポーンposition作成
                 ItemSpawnPosition = SpawnPosition + new Vector3(SpownPos, ItemOffsetY, 0);

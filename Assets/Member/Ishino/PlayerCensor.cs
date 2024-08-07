@@ -4,10 +4,11 @@ public class PlayerCensor : MonoBehaviour
 {
     private GameObject player; // プレイヤーオブジェクト
     private Collider objectCollider; // このオブジェクトのコライダー
+    [SerializeField]string playerPos;
 
     void Start()
     {
-        player = GameObject.Find("PlayerPos");
+        player = GameObject.Find(playerPos);
 
         // このオブジェクトのコライダーを取得
         objectCollider = GetComponent<Collider>();

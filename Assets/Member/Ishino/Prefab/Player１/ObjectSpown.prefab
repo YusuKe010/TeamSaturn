@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 520204045222997356}
   - component: {fileID: 2517114978536099322}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ObjectSpown
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -55,10 +55,10 @@ MonoBehaviour:
   - {fileID: 5528016564629831420, guid: b5679b3174e7c314e82248f761b80da6, type: 3}
   ItemSpawnProbability: 30
   verticalOffsetY: 3
-  verticalOffsetX: 3
+  verticalOffsetXLeft: -3
+  verticalOffsetXRight: 3
   SpownRocklargest: 3
   SpownCloudlargest: 1
   FastSpown: 3
   CloudSpown: 10
-  PlayerPrefab: {fileID: 0}
-  JumpKeyCode: 32
+  JumpKeyCode: 119
