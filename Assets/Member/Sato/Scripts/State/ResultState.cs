@@ -24,8 +24,11 @@ namespace FSM
             // ランキングにスコアを送信。
             int player1Score = ScoreManager.GetScoreValue(ScoreManager.Player.Player1);
             int player2Score = ScoreManager.GetScoreValue(ScoreManager.Player.Player2);
-            _ranking.PostData("テストユーザー1", player1Score, Player1PostScore);
-            _ranking.PostData("テストユーザー2", player2Score, Player2PostScore);
+
+            string pn1 = UserNameHolder.GetPlayerName(UserNameHolder.Player.Player1);
+            string pn2 = UserNameHolder.GetPlayerName (UserNameHolder.Player.Player2);
+            _ranking.PostData(pn1, player1Score, Player1PostScore);
+            _ranking.PostData(pn2, player2Score, Player2PostScore);
         }
 
         protected override void Exit()
