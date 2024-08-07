@@ -64,7 +64,7 @@ public class Ranking : MonoBehaviour
         StartCoroutine(PostDataAsync(userName, score, action));
     }
 
-    private IEnumerator PostDataAsync(string username, int score, Action action)
+    public IEnumerator PostDataAsync(string username, int score, Action action)
     {
         Debug.Log("データ送信開始・・・");
         var form = new WWWForm();
