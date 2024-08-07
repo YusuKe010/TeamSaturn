@@ -6,6 +6,7 @@ using UnityEngine;
 /// 烏：２ポイントおき
 /// 飛行機：３ポイントおき
 /// に生成する
+/// 最初は動かないようにする
 /// </summary>
 public class ObstacleGeneration : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class ObstacleGeneration : MonoBehaviour
     void Start()
     {
         _playerObj = _rangeUpper.transform.parent.gameObject;
+    }
+
+    public void GenerateStart() //生成を開始するときに呼び出してほしいメソッド
+    {
         StartCoroutine(Generation());
     }
 

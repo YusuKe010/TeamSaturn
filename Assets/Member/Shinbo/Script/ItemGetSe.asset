@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: ItemGetSe
   m_EditorClassIdentifier: 
   _all:
-  - Key: Invincivle
-    Clip: {fileID: 8300000, guid: 0caa9d06460cab943a5cfe0290344ea8, type: 3}
-    Volume: 0.398
+  - Key: Invincible
+    Clip: {fileID: 8300000, guid: 8abe749ccc3086243a96f4feda495459, type: 3}
+    Volume: 1
   - Key: Jump
-    Clip: {fileID: 0}
-    Volume: 0
+    Clip: {fileID: 8300000, guid: b648328448ec8c4499773fa3a719677d, type: 3}
+    Volume: 1
