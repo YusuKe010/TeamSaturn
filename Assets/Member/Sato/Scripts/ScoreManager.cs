@@ -82,7 +82,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (Instance != null)
         {
-            PlayerScore(player).Value = value;
+            PlayerScore(player).Value = Mathf.Max(0, value);
         }
         else
         {
