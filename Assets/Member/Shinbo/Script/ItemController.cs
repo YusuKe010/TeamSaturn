@@ -9,7 +9,7 @@ public class ItemController : MonoBehaviour
     bool _itemGet;
     Animator _animator;
 
-    private void Start()
+    private void Awake()
     {
         _animator = GetComponent<Animator>();
     }
