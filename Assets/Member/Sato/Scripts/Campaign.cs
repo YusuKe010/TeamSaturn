@@ -24,6 +24,9 @@ namespace Title
         {
             Ranking ranking = FindAnyObjectByType<Ranking>();
 
+            UserNameHolder.SetPlayerName(UserNameHolder.Player.Player1, "プレイヤー1");
+            UserNameHolder.SetPlayerName(UserNameHolder.Player.Player2, "プレイヤー2");
+
             string p1Name = _player1InputField.text;
             string p2Name = _player2InputField.text;
             UserNameHolder.SetPlayerName(UserNameHolder.Player.Player1, p1Name);
