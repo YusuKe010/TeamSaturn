@@ -50,10 +50,14 @@ MonoBehaviour:
   CloudSpawn:
   - {fileID: 4770027695226559949, guid: a38bb617da70de24f83a8484f0b73c5d, type: 3}
   - {fileID: 3732236520391069413, guid: afd0e3597b2ff944abdf48820e839753, type: 3}
-  ItemSpawn: []
+  ItemPrefab:
+  - {fileID: 5222851497021045699, guid: 960bb0e55733e674ebd5d28888d22c3e, type: 3}
+  - {fileID: 5528016564629831420, guid: b5679b3174e7c314e82248f761b80da6, type: 3}
+  ItemSpawnProbability: 30
   verticalOffsetY: 3
   verticalOffsetX: 3
-  SpownCount: 3
+  SpownRocklargest: 3
+  SpownCloudlargest: 1
   FastSpown: 3
   CloudSpown: 10
   PlayerPrefab: {fileID: 0}
