@@ -18,13 +18,13 @@ public class ItemController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && !_itemGet)
         {
-            ItemGet();
+            ItemGet(other);
             _animator.SetBool("Get", true);
             _itemGet = true;
         }
     }
 
-    public virtual void ItemGet()
+    public virtual void ItemGet(Collider other)
     {
         //アイテムをゲットした時の処理を書く
         Debug.Log("ItemGet");
