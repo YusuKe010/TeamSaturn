@@ -45,7 +45,7 @@ public class ObstacleGeneration : MonoBehaviour
         float y = Random.Range(_rangeUpper.transform.position.y, _rangeLower.transform.position.y);
         float z = Random.Range(_rangeUpper.transform.position.z, _rangeLower.transform.position.z);
 
-        Instantiate(_obstaclePrefabs[index], new Vector3(x, y, z), Quaternion.identity);
+        Instantiate(_obstaclePrefabs[index], new Vector3(x, y, z), Quaternion.Euler(0, 180, 0));
     }
 
     IEnumerator Generation()

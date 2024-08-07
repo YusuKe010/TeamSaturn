@@ -7,12 +7,19 @@
 public class ItemController : MonoBehaviour
 {
     bool _itemGet;
+    Animator _animator;
+
+    private void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player" && !_itemGet)
         {
             ItemGet();
+            _animator.SetBool("Get", true);
             _itemGet = true;
         }
     }

@@ -7,11 +7,15 @@ public class PlayerJump : MonoBehaviour
 
 	[SerializeField] private Rigidbody _rb;
 	[SerializeField] ScoreManager.Player _playerType;
-	private Vector3 _dir;
+	[SerializeField] private ParticleSystem _playerDust;
+	[SerializeField] private ParticleSystem _playerLanding;
+
+    private Vector3 _dir;
 	private float _saveHight;
 
 	private float _currentJumpPower;
 	private bool _isGround;
+	private bool _isFallSE;
 
 
 
@@ -23,6 +27,11 @@ public class PlayerJump : MonoBehaviour
 	private void Update()
 	{
 		if (Input.GetKeyDown(_playerInput.JumpKey) && _isGround && _playerInput.IsStart) Jump();
+		if(!_isFallSE && _rb.velocity.y <= 0)
+		{
+			AudioPlayer.PlaySE("Player_Falling");
+			_isFallSE = true;
+		}	
 	}
     private void LateUpdate()
     {
@@ -37,8 +46,17 @@ public class PlayerJump : MonoBehaviour
             ScoreManager.SetScore(_playerType, (int)(this.transform.position.y - _saveHight));
         }
 	}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Ground") && _rb.velocity.y <= 0)
+        {
+            AudioPlayer.PlaySE("Player_Landing");
+            _playerLanding.Play();
+        }
 
-	private void Initialize()
+    }
+
+    private void Initialize()
 	{
 		_currentJumpPower = _jumpPower;
         _saveHight = this.transform.position.y;
@@ -49,8 +67,12 @@ public class PlayerJump : MonoBehaviour
 	private void Jump()
 	{
 		_isGround = false;
-		_rb.AddForce(Vector3.up * _currentJumpPower, ForceMode.Impulse);
-	}
+		_isFallSE = false;
+
+        _rb.AddForce(Vector3.up * _currentJumpPower, ForceMode.Impulse);
+		AudioPlayer.PlaySE("Player_Jump");
+        _playerDust.Play();
+    }
 
 	public void JumpPowerUp(float value)
 	{

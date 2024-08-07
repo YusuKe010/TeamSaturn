@@ -24,14 +24,16 @@ namespace FSM
             obstacle.GenerateStart();
 
             // プレイヤー行動開始
-            PlayerController player = Object.FindAnyObjectByType<PlayerController>();
-            player.PlayerStart();
+            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+            foreach (GameObject p in players)
+            {
+                p.GetComponent<PlayerController>().PlayerStart();
+            }
         }
 
         protected override void Stay()
         {
-            Debug.Log("オープニング中。Gキーを押してスタート");
-            if (Input.GetKeyDown(KeyCode.G)) TryChangeState(StateIdentifier.Playing);
+            TryChangeState(StateIdentifier.Playing);
         }
     }
 }

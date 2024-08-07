@@ -9,15 +9,28 @@ public class PlayerController : MonoBehaviour
 	public KeyCode LeftKey => _leftKey;
 	public KeyCode RightKey => _rightKey;
 
-	public float InputValue { get; private set; }
+	public float _inputValue;
+	public float InputValue => _inputValue;
 
 	bool _isStart;
 	public bool IsStart => _isStart;
 
-	private void Update()
+
+    private void Update()
 	{
-		InputValue = Input.GetAxis("Horizontal");
-	}
+		if (Input.GetKey(_leftKey))
+		{
+			_inputValue = -1;
+		}
+		else if (Input.GetKey(_rightKey))
+		{
+			_inputValue = 1;
+		}
+        else
+        {
+			_inputValue = 0;
+        }
+    }
 
 	public void PlayerStart()
 	{

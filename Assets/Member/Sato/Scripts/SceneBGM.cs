@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneBGM : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] string _bgmName;
+
+    void Awake()
     {
-        
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        AudioPlayer.PlayBGM(_bgmName);
+    }
+
+    void OnSceneLoaded(Scene _, LoadSceneMode __)
+    {
+        AudioPlayer.StopBGM();
     }
 }

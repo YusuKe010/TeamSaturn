@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8321859889968450059}
   - component: {fileID: 7076251233245771092}
   - component: {fileID: 6826158205289639333}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,6 +185,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2455e7890c2ab00468b69da32d70d253, type: 3}
       propertyPath: m_Name
       value: BgMD_jump_item_01_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2455e7890c2ab00468b69da32d70d253, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

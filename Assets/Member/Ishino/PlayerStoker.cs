@@ -20,7 +20,8 @@ public class PlayerStoker : MonoBehaviour
     void Update()
     {
         playerPos = player.transform.position;
-        this.transform.position = new Vector3(0,playerPos.y + 0.5f, 0);
+        ThisPosition.y = playerPos.y;
+        this.transform.position = ThisPosition;
         //ThisPosition.y = playerPos.y;
 
         //// オブジェクトの座標を変数 pos に格納

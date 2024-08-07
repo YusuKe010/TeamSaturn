@@ -13,8 +13,11 @@ public class ObjectSpawner : MonoBehaviour
     [Header("足場の縦の生成間隔")]
     public float verticalOffsetY = 5f; // スポーンする間隔
     float ItemOffsetY = 0f; // アイテムがスポーンする間隔
-    [Header("足場の横の生成範囲")]
-    public float verticalOffsetX = 50f; // スポーンする間隔
+    [Header("足場の横の生成範囲左")]
+    public float verticalOffsetXLeft = -3f; // スポーンする間隔
+    [Header("足場の横の生成範囲右")]
+    public float verticalOffsetXRight = 3f; // スポーンする間隔
+
     [Header("一度に生成される岩足場の最大数")]
     public int SpownRocklargest = 2;
     [Header("一度に生成される雲足場の最大数")]
@@ -24,8 +27,6 @@ public class ObjectSpawner : MonoBehaviour
     public int FastSpown = 5;
     [Header("雲が出現しだす数")]
     public int CloudSpown = 10;
-    [Header("プレイヤーのプレハブ")]
-    [SerializeField] GameObject PlayerPrefab;
     [Header("プレイヤーのジャンプ")]
     [SerializeField] KeyCode JumpKeyCode = KeyCode.Space;
     int SpawnRnd=1;
@@ -33,11 +34,12 @@ public class ObjectSpawner : MonoBehaviour
     int SpawnObj;
     int Objectcount;
     private Vector3 SpawnPosition;
+    private Vector3 Fastposition;
 
     void Start()
     {
         SpawnPosition = transform.position;
-
+        Fastposition = transform.position;
         for (int i = 0; i <= FastSpown; i++)
         {
             SpawnObject();
@@ -59,38 +61,39 @@ public class ObjectSpawner : MonoBehaviour
     void SpawnObject()
     {
         Vector3 spawnPosition;
-        SpawnRnd = Random.Range(1, 3);
+       
 
         if (CloudSpown >= Objectcount)
         {
 
             SpownCount = Random.Range(1, SpownRocklargest+1);
-            SpownPos = Random.Range(-verticalOffsetX, verticalOffsetX);
+            SpownPos = Random.Range(verticalOffsetXLeft,verticalOffsetXRight);
                 SpawnObj = Random.Range(0, objectToSpawn.Length);
                 // スポーンposition作成
-                spawnPosition = SpawnPosition + new Vector3(SpownPos, verticalOffsetY, 0);
+                spawnPosition = SpawnPosition + new Vector3(0, verticalOffsetY, 0);
+                spawnPosition.x = SpownPos;
             for (int i = 1; i <= SpownCount; i++)
             {
                 // オブジェクト生成
-                Instantiate(objectToSpawn[SpawnObj], spawnPosition, Quaternion.identity);
-
-                spawnPosition.x = 0;
+                Instantiate(objectToSpawn[SpawnObj], spawnPosition, Quaternion.identity);                
 
                 // スポーンpositionの位置を調整
-                SpawnPosition = spawnPosition;
-                
+                SpawnPosition = spawnPosition;                
+                spawnPosition.x = Fastposition.x;
             }
+            
             Objectcount += 1;
             SpawnItem();
         }
         else
         {
             SpownCount = Random.Range(1, SpownCloudlargest+1);
-            SpownPos = Random.Range(-verticalOffsetX, verticalOffsetX);
+            SpownPos = Random.Range(verticalOffsetXLeft, verticalOffsetXRight);
             SpawnObj = Random.Range(0, CloudSpawn.Length);
 
             // スポーンposition作成
             spawnPosition = SpawnPosition + new Vector3(SpownPos, verticalOffsetY, 0);
+            spawnPosition.x = SpownPos;
             for (int i = 1; i <= SpownCount; i++)
             {
                 
@@ -98,7 +101,7 @@ public class ObjectSpawner : MonoBehaviour
                 // オブジェクト生成
                 Instantiate(CloudSpawn[SpawnObj], spawnPosition, Quaternion.identity);
 
-                spawnPosition.x = 0;
+                spawnPosition.x = Fastposition.x;
 
                 // スポーンpositionの位置を調整
                 SpawnPosition = spawnPosition;
@@ -117,14 +120,15 @@ public class ObjectSpawner : MonoBehaviour
             {
 
                 //SpownCount = Random.Range(1, SpownRocklargest + 1);
-                SpownPos = Random.Range(-verticalOffsetX, verticalOffsetX);
+                SpownPos = Random.Range(verticalOffsetXLeft, verticalOffsetXRight);
 
                 // スポーンposition作成
-                ItemSpawnPosition = SpawnPosition + new Vector3(SpownPos, ItemOffsetY, 0);
+                ItemSpawnPosition = SpawnPosition + new Vector3(0, ItemOffsetY, 0);
+                //ItemSpawnPosition.x = ItemOffsetY;
                     // オブジェクト生成
                     Instantiate(ItemPrefab[SpawnItemRnd], ItemSpawnPosition, Quaternion.identity);
 
-                ItemSpawnPosition.x = 0;
+                ItemSpawnPosition.x = Fastposition.x;
               
             }
         }
