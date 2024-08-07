@@ -247,6 +247,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Campaign_Duo
       objectReference: {fileID: 0}
+    - target: {fileID: 3903216407816831313, guid: 9ee669ad3b53ce74498c48daef2f82df, type: 3}
+      propertyPath: m_Text
+      value: "\u30B2\u30FC\u30E0\u958B\u59CB"
+      objectReference: {fileID: 0}
     - target: {fileID: 5733233256562483060, guid: 9ee669ad3b53ce74498c48daef2f82df, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

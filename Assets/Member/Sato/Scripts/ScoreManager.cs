@@ -80,6 +80,8 @@ public class ScoreManager : MonoBehaviour
     /// </summary>
     public static void SetScore(Player player, int value)
     {
+        Debug.Log(value + "‚ðƒZƒbƒg");
+
         if (Instance != null)
         {
             PlayerScore(player).Value = Mathf.Max(0, value);
