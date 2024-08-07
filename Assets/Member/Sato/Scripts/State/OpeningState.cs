@@ -13,7 +13,8 @@ namespace FSM
         protected override void Enter()
         {
             // スコアをリセット。
-            ScoreManager.ResetScore();
+            ScoreManager.ResetScore(ScoreManager.Player.Player1);
+            ScoreManager.ResetScore(ScoreManager.Player.Player2);
         }
 
         protected override void Exit()
@@ -29,7 +30,7 @@ namespace FSM
 
         protected override void Stay()
         {
-            Debug.Log("オープニング中");
+            Debug.Log("オープニング中。Gキーを押してスタート");
             if (Input.GetKeyDown(KeyCode.G)) TryChangeState(StateIdentifier.Playing);
         }
     }
