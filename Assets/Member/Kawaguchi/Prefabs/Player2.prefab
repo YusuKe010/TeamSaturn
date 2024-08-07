@@ -378,6 +378,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerDust
       objectReference: {fileID: 0}
+    - target: {fileID: 2547576142518413873, guid: e56dddd0f7f90ca4e8903b54c9d22e9e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -404,6 +408,10 @@ PrefabInstance:
     - target: {fileID: 7245255623233126438, guid: d5e84e6924b413140b42b341eaaf6df2, type: 3}
       propertyPath: m_Name
       value: ShockWave
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245255623233126438, guid: d5e84e6924b413140b42b341eaaf6df2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7248808141294081958, guid: d5e84e6924b413140b42b341eaaf6df2, type: 3}
       propertyPath: m_LocalPosition.x
