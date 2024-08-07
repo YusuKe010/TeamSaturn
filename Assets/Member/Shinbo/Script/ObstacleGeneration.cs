@@ -22,6 +22,7 @@ public class ObstacleGeneration : MonoBehaviour
     void Start()
     {
         _playerObj = _rangeUpper.transform.parent.gameObject;
+        GenerateStart();
     }
 
     public void GenerateStart() //生成を開始するときに呼び出してほしいメソッド

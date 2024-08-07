@@ -13,17 +13,23 @@ public class Item_Invincible : ItemController
     void Start()
     {
         _obstacleObj = GameObject.FindGameObjectsWithTag("Respawn");
+        StartCoroutine(SearchObstacle());
     }
 
     public override void ItemGet()
     {
-        foreach (var obj in _obstacleObj)
+        AudioPlayer.PlaySE("Invincible");
+
+        if (_obstacleObj != null)
         {
-            Collider col = obj.GetComponent<Collider>();
-            col.enabled = false;
-            AudioPlayer.PlaySE("Invincible");
-            StartCoroutine(Release());
+            foreach (var obj in _obstacleObj)
+            {
+                Collider col = obj.GetComponent<Collider>();
+                col.enabled = false;
+                StartCoroutine(Release());
+            }
         }
+        
     }
 
     IEnumerator Release()
@@ -37,5 +43,14 @@ public class Item_Invincible : ItemController
             col.enabled = true;
         }
         Destroy(gameObject);
+    }
+
+    IEnumerator SearchObstacle()
+    {
+        _obstacleObj = GameObject.FindGameObjectsWithTag("Respawn");
+
+        yield return new WaitForSeconds(1);
+
+        StartCoroutine(SearchObstacle());
     }
 }
