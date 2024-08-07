@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerInput : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
 	[SerializeField] private KeyCode _jumpKey = KeyCode.Space;
 	[SerializeField] private KeyCode _leftKey = KeyCode.A;
@@ -11,8 +11,20 @@ public class PlayerInput : MonoBehaviour
 
 	public float InputValue { get; private set; }
 
+	bool _isStart;
+	public bool IsStart => _isStart;
+
 	private void Update()
 	{
 		InputValue = Input.GetAxis("Horizontal");
+	}
+
+	public void PlayerStart()
+	{
+		_isStart = true;
+	}
+	public void PlayerEnd()
+	{
+		_isStart = false;
 	}
 }

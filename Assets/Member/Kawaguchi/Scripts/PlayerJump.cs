@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerJump : MonoBehaviour
 {
 	[SerializeField] private float _jumpPower;
-	[SerializeField] private PlayerInput _playerInput;
+	[SerializeField] private PlayerController _playerInput;
 
 	[SerializeField] private Rigidbody _rb;
 	private Vector3 _dir;
@@ -21,8 +21,7 @@ public class PlayerJump : MonoBehaviour
 
 	private void Update()
 	{
-		if (Input.GetKeyDown(_playerInput.JumpKey) && _isGround) Jump();
-		ScoreManager.SetScore((int)(this.transform.position.y - _saveHight));
+		if (Input.GetKeyDown(_playerInput.JumpKey) && _isGround && _playerInput.IsStart) Jump();
 	}
     private void LateUpdate()
     {
@@ -31,7 +30,11 @@ public class PlayerJump : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
 	{
-		if (other.CompareTag("Ground") && _rb.velocity.y <= 0) _isGround = true;
+		if (other.CompareTag("Ground") && _rb.velocity.y <= 0) 
+		{
+			_isGround = true;
+            ScoreManager.SetScore((int)(this.transform.position.y - _saveHight));
+        }
 	}
 
 	private void Initialize()
