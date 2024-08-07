@@ -7,10 +7,11 @@ public class PlayerJump : MonoBehaviour
 
 	[SerializeField] private Rigidbody _rb;
 	private Vector3 _dir;
-	private Vector3 _savePos;
+	private float _saveHight;
 
 	private float _currentJumpPower;
 	private bool _isGround;
+
 
 
 	private void Start()
@@ -21,6 +22,7 @@ public class PlayerJump : MonoBehaviour
 	private void Update()
 	{
 		if (Input.GetKeyDown(_playerInput.JumpKey) && _isGround) Jump();
+		ScoreManager.SetScore((int)(this.transform.position.y - _saveHight));
 	}
     private void LateUpdate()
     {
@@ -35,7 +37,9 @@ public class PlayerJump : MonoBehaviour
 	private void Initialize()
 	{
 		_currentJumpPower = _jumpPower;
-	}
+        _saveHight = this.transform.position.y;
+
+    }
 
 	//右左ジャンプ
 	private void Jump()
