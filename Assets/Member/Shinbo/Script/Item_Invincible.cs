@@ -10,7 +10,7 @@ public class Item_Invincible : ItemController
     [SerializeField] float _releaseSeconds = 3;
     public bool _invincible;
 
-    public override void ItemGet()
+    public override void ItemGet(Collider other)
     {
         AudioPlayer.PlaySE("Invincible");
 
