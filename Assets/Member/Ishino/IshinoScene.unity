@@ -868,10 +868,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObjectSpown2
       objectReference: {fileID: 0}
-    - target: {fileID: 1845254168504695783, guid: f2764c1548ee6f743ab981ab956849bf, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 5636257778604245564, guid: f2764c1548ee6f743ab981ab956849bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 40
@@ -911,22 +907,6 @@ PrefabInstance:
     - target: {fileID: 5636257778604245564, guid: f2764c1548ee6f743ab981ab956849bf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7777354784133374634, guid: f2764c1548ee6f743ab981ab956849bf, type: 3}
-      propertyPath: FastSpown
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7777354784133374634, guid: f2764c1548ee6f743ab981ab956849bf, type: 3}
-      propertyPath: JumpKeyCode
-      value: 273
-      objectReference: {fileID: 0}
-    - target: {fileID: 7777354784133374634, guid: f2764c1548ee6f743ab981ab956849bf, type: 3}
-      propertyPath: verticalOffsetXLeft
-      value: 37
-      objectReference: {fileID: 0}
-    - target: {fileID: 7777354784133374634, guid: f2764c1548ee6f743ab981ab956849bf, type: 3}
-      propertyPath: verticalOffsetXRight
-      value: 43
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
