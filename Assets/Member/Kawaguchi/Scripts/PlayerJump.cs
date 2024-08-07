@@ -38,18 +38,25 @@ public class PlayerJump : MonoBehaviour
         if(this.transform.position.z != 0) transform.position = new Vector3(transform.position.x, transform.position.y, 0);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
 	{
 		if (other.CompareTag("Ground") && _rb.velocity.y <= 0) 
 		{
 			_isGround = true;
-            ScoreManager.SetScore(_playerType, (int)(this.transform.position.y - _saveHight));
-			AudioPlayer.PlaySE("Player_Landing");
-			_playerLanding.Play();
+            //ScoreManager.SetScore(_playerType, (int)(this.transform.position.y - _saveHight));
         }
 	}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Ground") && _rb.velocity.y <= 0)
+        {
+            AudioPlayer.PlaySE("Player_Landing");
+            _playerLanding.Play();
+        }
 
-	private void Initialize()
+    }
+
+    private void Initialize()
 	{
 		_currentJumpPower = _jumpPower;
         _saveHight = this.transform.position.y;
