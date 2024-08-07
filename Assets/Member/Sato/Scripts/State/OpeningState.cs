@@ -15,6 +15,11 @@ namespace FSM
             // スコアをリセット。
             ScoreManager.ResetScore(ScoreManager.Player.Player1);
             ScoreManager.ResetScore(ScoreManager.Player.Player2);
+            // スコアネームをセット
+            string pn1 = UserNameHolder.GetPlayerName(UserNameHolder.Player.Player1);
+            string pn2 = UserNameHolder.GetPlayerName(UserNameHolder.Player.Player2);
+            ScoreManager.SetScoreName(ScoreManager.Player.Player1, pn1);
+            ScoreManager.SetScoreName(ScoreManager.Player.Player2, pn2);
         }
 
         protected override void Exit()
