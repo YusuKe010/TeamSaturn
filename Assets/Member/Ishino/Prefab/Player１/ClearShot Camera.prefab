@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1176624351960949736}
   - component: {fileID: 1370684501353486482}
   - component: {fileID: 254430955203195808}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 4215759734740474932}
   - component: {fileID: 6413581332335710953}
   - component: {fileID: 746364920167828467}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Virtual Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,8 +121,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6152309543157155362}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000009355709, y: -1.24841274e-11, z: 4.4650833e-10, w: 1}
-  m_LocalPosition: {x: 6.076403, y: 7.100127, z: -10}
+  m_LocalRotation: {x: -9.312849e-10, y: 0.000000050049003, z: 7.749469e-11, w: 1}
+  m_LocalPosition: {x: 2.5764031, y: -3.109873, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -208,7 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6375373049351735464}
   - component: {fileID: 3552748864053179741}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ClearShot Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}

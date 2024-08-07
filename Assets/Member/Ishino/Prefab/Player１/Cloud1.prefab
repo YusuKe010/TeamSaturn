@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6db913e0374835547a4593ae6506f946, type: 3}
       propertyPath: m_Name
-      value: Cloud
+      value: Cloud1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6db913e0374835547a4593ae6506f946, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6db913e0374835547a4593ae6506f946, type: 3}
       propertyPath: m_TagString
@@ -105,3 +109,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38407a374a302d0498bff4b5700e8f3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPos: PlayerPos1
