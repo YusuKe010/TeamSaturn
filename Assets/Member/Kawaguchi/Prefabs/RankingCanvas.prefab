@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5970818001523852952}
   - component: {fileID: 5467019433842516428}
   - component: {fileID: 1217969144232214137}
+  - component: {fileID: 1660583477492374287}
   m_Layer: 5
   m_Name: RankingCanvas
   m_TagString: Untagged
@@ -118,10 +119,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2ee415a6c364244bcbf94a5b5951f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  accessKey: AKfycbx0-Xfxrqz8lPTDeIQjO2t8ZzvS3bQQQQ4w1Mx9k04BsNWTXqD7Abv0LWUUT7tJcEjk
+--- !u!114 &1660583477492374287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597239042735738065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d67025724fc37294c8865b4e6a467695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _nameText: {fileID: 6975077263914961418}
   _scoreText: {fileID: 4684791665841800037}
-  accessKey: AKfycbx0-Xfxrqz8lPTDeIQjO2t8ZzvS3bQQQQ4w1Mx9k04BsNWTXqD7Abv0LWUUT7tJcEjk
   _rankingCount: 5
+  _rankings: {fileID: 1217969144232214137}
 --- !u!1 &3256989273234715220
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +224,7 @@ GameObject:
   - component: {fileID: 2398088288172180804}
   - component: {fileID: 1646022649037719529}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: ResultText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,7 +318,7 @@ GameObject:
   - component: {fileID: 3873830007547858681}
   - component: {fileID: 4684791665841800037}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: RankingScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -326,7 +340,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 159.7, y: 0}
+  m_AnchoredPosition: {x: 159.7, y: 91}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3873830007547858681
@@ -383,7 +397,7 @@ GameObject:
   - component: {fileID: 3406249557347304422}
   - component: {fileID: 6975077263914961418}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: RankingName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -405,7 +419,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -424.87, y: 229}
+  m_AnchoredPosition: {x: -424.87, y: 68}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3406249557347304422
