@@ -50,11 +50,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2517114978536099322, guid: f7bd6f077a943644fa3c381f89fb6756, type: 3}
       propertyPath: FastSpown
-      value: 4
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2517114978536099322, guid: f7bd6f077a943644fa3c381f89fb6756, type: 3}
+      propertyPath: CloudSpown
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2517114978536099322, guid: f7bd6f077a943644fa3c381f89fb6756, type: 3}
       propertyPath: JumpKeyCode
       value: 273
+      objectReference: {fileID: 0}
+    - target: {fileID: 2517114978536099322, guid: f7bd6f077a943644fa3c381f89fb6756, type: 3}
+      propertyPath: SpownRocklargest
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2517114978536099322, guid: f7bd6f077a943644fa3c381f89fb6756, type: 3}
       propertyPath: verticalOffsetXLeft
