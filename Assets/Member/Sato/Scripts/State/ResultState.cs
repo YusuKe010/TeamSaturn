@@ -9,7 +9,8 @@ namespace FSM
         Ranking _ranking;
 
         // ランキングにスコアの送信が完了したフラグ。
-        bool _isPostScoreRankingCompleted;
+        bool _isPlayer1Post;
+        bool _isPlayer2Post;
         // 重複してシーンを遷移させないよう制御するフラグ。
         bool _isSceneChangeRunning;
 
@@ -21,8 +22,10 @@ namespace FSM
         protected override void Enter()
         {
             // ランキングにスコアを送信。
-            int score = ScoreManager.GetScoreValue();
-            _ranking.PostData("テストユーザー", score, PostScoreRankingCoplete);
+            int player1Score = ScoreManager.GetScoreValue(ScoreManager.Player.Player1);
+            int player2Score = ScoreManager.GetScoreValue(ScoreManager.Player.Player2);
+            _ranking.PostData("テストユーザー1", player1Score, Player1PostScore);
+            _ranking.PostData("テストユーザー2", player2Score, Player2PostScore);
         }
 
         protected override void Exit()
@@ -32,7 +35,7 @@ namespace FSM
         protected override void Stay()
         {
             // スコア送信が完了するまで待つ。
-            if (!_isPostScoreRankingCompleted) return;
+            if (!_isPlayer1Post || !_isPlayer2Post) return;
 
             // リザルトシーンに遷移。
             if (!_isSceneChangeRunning)
@@ -43,6 +46,7 @@ namespace FSM
         }
 
         // スコアをランキングに登録完了フラグの操作する用途。
-        void PostScoreRankingCoplete() => _isPostScoreRankingCompleted = true;
+        void Player1PostScore() => _isPlayer1Post = true;
+        void Player2PostScore() => _isPlayer2Post = true;
     }
 }

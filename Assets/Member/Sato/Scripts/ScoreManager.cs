@@ -15,20 +15,24 @@ public class Score
 /// </summary>
 public class ScoreManager : MonoBehaviour
 {
+    // プレイヤーを指定する用の列挙型
+    public enum Player { Player1, Player2 };
+
     // シングルトン
     static ScoreManager Instance;
 
     // 1ゲームごとにスコアを管理する想定なので変数は1つで十分。
-    Score _score;
-    // スコアランキング。アプリケーション終了時にリセットされる。
-    List<Score> _ranking;
+    Score _player1Score;
+    Score _player2Score;
 
     void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+
+            _player1Score = new Score();
+            _player2Score = new Score();
         }
         else
         {
@@ -44,12 +48,11 @@ public class ScoreManager : MonoBehaviour
     /// <summary>
     /// 保持しているスコアをリセット。
     /// </summary>
-    public static void ResetScore()
+    public static void ResetScore(Player player)
     {
         if (Instance != null)
         {
-            Instance._score ??= new Score();
-            Instance._score.Value = 0;
+            PlayerScore(player).Value = 0;
         }
         else
         {
@@ -60,12 +63,11 @@ public class ScoreManager : MonoBehaviour
     /// <summary>
     /// スコアを加算。
     /// </summary>
-    public static void AddScore(int value)
+    public static void AddScore(Player player, int value)
     {
         if (Instance != null)
         {
-            Instance._score ??= new Score();
-            Instance._score.Value += value;
+            PlayerScore(player).Value += value;
         }
         else
         {
@@ -76,12 +78,11 @@ public class ScoreManager : MonoBehaviour
     /// <summary>
     /// スコアをセット。
     /// </summary>
-    public static void SetScore(int value)
+    public static void SetScore(Player player, int value)
     {
         if (Instance != null)
         {
-            Instance._score ??= new Score();
-            Instance._score.Value = value;
+            PlayerScore(player).Value = value;
         }
         else
         {
@@ -92,17 +93,25 @@ public class ScoreManager : MonoBehaviour
     /// <summary>
     /// スコアを取得。
     /// </summary>
-    public static int GetScoreValue()
+    public static int GetScoreValue(Player player)
     {
         if (Instance != null)
         {
-            if (Instance._score == null) return 0;
-            else return Instance._score.Value;
+            return PlayerScore(player).Value;
         }
         else
         {
             Debug.LogWarning($"{nameof(ScoreManager)}のインスタンスがシーン上に存在しないのでスコアを取得不可能。");
             return -1;
         }
+    }
+
+    // プレイヤーごとのスコアを取得
+    static Score PlayerScore(Player player)
+    {
+        if (Instance == null) return null;
+
+        if (player == Player.Player1) return Instance._player1Score;
+        else return Instance._player2Score;
     }
 }

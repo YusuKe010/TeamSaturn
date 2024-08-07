@@ -32,9 +32,6 @@ namespace FSM
 
         protected override void Stay()
         {
-            // 仮で毎フレームスコアを加算。
-            ScoreManager.AddScore(1);
-
             // 時間切れ直前のSE再生。
             if (Timer.GetCurrentTime() < TimeupSePlayTime && !_isTimeupSePlaying)
             {

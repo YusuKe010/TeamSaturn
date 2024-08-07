@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ScoreUI : MonoBehaviour
 {
+    [SerializeField] ScoreManager.Player _player;
+
     Text _value;
 
     void Awake()
@@ -15,6 +17,6 @@ public class ScoreUI : MonoBehaviour
 
     void Update()
     {
-        _value.text = ScoreManager.GetScoreValue().ToString();
+        _value.text = ScoreManager.GetScoreValue(_player).ToString();
     }
 }
