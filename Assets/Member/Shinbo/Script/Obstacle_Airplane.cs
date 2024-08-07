@@ -7,7 +7,6 @@ public class Obstacle_Airplane : ObstacleController
 {
 
     [SerializeField] float _decreaseSeconds = 3;
-
     public override void ObstacleCollision()
     {
         Timer.IncreaseTime(_decreaseSeconds);

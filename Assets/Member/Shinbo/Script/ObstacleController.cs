@@ -9,9 +9,11 @@
 public class ObstacleController : MonoBehaviour
 {
     [SerializeField] float _speed = 10;
+    [SerializeField] LayerMask _layerMask;
 
     private void Start()
     {
+        gameObject.layer = _layerMask;
         //生成されたとき、横方向にとんでいく
         Rigidbody rb = GetComponent<Rigidbody>();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
