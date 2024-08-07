@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioTable:
   - {fileID: 11400000, guid: 98adc882c2fdff34893e488b26250aff, type: 2}
+  - {fileID: 11400000, guid: f7f577270fb5d954bb70d9980fbbba18, type: 2}

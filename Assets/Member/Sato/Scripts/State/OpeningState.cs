@@ -18,14 +18,19 @@ namespace FSM
 
         protected override void Exit()
         {
-            Debug.Log("オープニング終了");
+            // 障害物生成開始
+            ObstacleGeneration obstacle = Object.FindAnyObjectByType<ObstacleGeneration>();
+            obstacle.GenerateStart();
+
+            // プレイヤー行動開始
+            PlayerController player = Object.FindAnyObjectByType<PlayerController>();
+            player.PlayerStart();
         }
 
         protected override void Stay()
         {
             Debug.Log("オープニング中");
-
-            TryChangeState(StateIdentifier.Playing);
+            if (Input.GetKeyDown(KeyCode.G)) TryChangeState(StateIdentifier.Playing);
         }
     }
 }
