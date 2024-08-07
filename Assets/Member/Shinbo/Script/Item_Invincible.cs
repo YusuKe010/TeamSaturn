@@ -8,49 +8,53 @@ public class Item_Invincible : ItemController
 {
     GameObject[] _obstacleObj;
     [SerializeField] float _releaseSeconds = 3;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        _obstacleObj = GameObject.FindGameObjectsWithTag("Respawn");
-        StartCoroutine(SearchObstacle());
-    }
+    public bool _invincible;
 
     public override void ItemGet()
     {
         AudioPlayer.PlaySE("Invincible");
 
-        if (_obstacleObj != null)
-        {
-            foreach (var obj in _obstacleObj)
-            {
-                Collider col = obj.GetComponent<Collider>();
-                col.enabled = false;
-                StartCoroutine(Release());
-            }
-        }
-        
+        _invincible = true;
+        StartCoroutine(Release());
+        Destroy(gameObject, 1);
     }
 
     IEnumerator Release()
     {
         Debug.Log("入手");
+
         yield return new WaitForSeconds(_releaseSeconds);
 
-        foreach (var obj in _obstacleObj)
+        _obstacleObj = GameObject.FindGameObjectsWithTag("Respawn");
+        if (_obstacleObj != null)
         {
-            Collider col = obj.GetComponent<Collider>();
-            col.enabled = true;
+            foreach (var obj in _obstacleObj)
+            {
+                Collider col = obj.GetComponent<Collider>();
+                col.enabled = true;
+            }
         }
-        Destroy(gameObject);
+
+        _invincible = false;
     }
 
-    IEnumerator SearchObstacle()
+    private void Update()
     {
-        _obstacleObj = GameObject.FindGameObjectsWithTag("Respawn");
-
-        yield return new WaitForSeconds(1);
-
-        StartCoroutine(SearchObstacle());
+        if (_invincible)
+        {
+            _obstacleObj = GameObject.FindGameObjectsWithTag("Respawn");
+            if (_obstacleObj != null)
+            {
+                foreach (var obj in _obstacleObj)
+                {
+                    Collider col = obj.GetComponent<Collider>();
+                    col.enabled = false;
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }
