@@ -937,10 +937,6 @@ PrefabInstance:
       propertyPath: _rangeUpper
       value: 
       objectReference: {fileID: 1930216539}
-    - target: {fileID: 6849505621425268689, guid: cbb41bcf057af8449b2d42ee8c9e7dfb, type: 3}
-      propertyPath: _crowInterval
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8663639910942592158, guid: cbb41bcf057af8449b2d42ee8c9e7dfb, type: 3}
       propertyPath: m_Name
       value: ObstacleGenerator

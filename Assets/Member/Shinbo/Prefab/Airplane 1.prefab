@@ -56,7 +56,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0dfc55c7f1b570c448eee18d47ef51d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111,8 +111,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c29ad11635a5947afefe3947ab1b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 15
-  _decreaseSeconds: -3
+  _speed: 10
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  _decreaseSeconds: 0
 --- !u!54 &6696583070371001642
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -188,6 +191,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9b14210639d37d84e9ceb1f9a9318b1d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0dfc55c7f1b570c448eee18d47ef51d2, type: 2}
     - target: {fileID: 919132149155446097, guid: 9b14210639d37d84e9ceb1f9a9318b1d, type: 3}
       propertyPath: m_Name
       value: plane

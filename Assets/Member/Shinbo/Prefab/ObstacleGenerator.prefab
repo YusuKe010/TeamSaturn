@@ -49,3 +49,7 @@ MonoBehaviour:
   _obstaclePrefabs:
   - {fileID: 1779629515616430026, guid: 80cbd8f68c60e2b46bc8348670bd257f, type: 3}
   - {fileID: 2471023337193671159, guid: 8bff91dcc7df31a4fb7f8ca133b3ba22, type: 3}
+  _crowInterval: 2
+  _airplaneInterval: 5
+  _crowHeight: 10
+  _airplaneHeight: 20
