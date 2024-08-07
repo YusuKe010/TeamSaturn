@@ -2,54 +2,58 @@ using UnityEngine;
 
 public class PlayerJump : MonoBehaviour
 {
-	[SerializeField] private float _jumpPower;
-	[SerializeField] private PlayerController _playerInput;
+    [SerializeField] private float _jumpPower;
+    [SerializeField] private PlayerController _playerInput;
 
-	[SerializeField] private Rigidbody _rb;
-	[SerializeField] ScoreManager.Player _playerType;
-	[SerializeField] private ParticleSystem _playerDust;
-	[SerializeField] private ParticleSystem _playerLanding;
+    [SerializeField] private Rigidbody _rb;
+    [SerializeField] ScoreManager.Player _playerType;
+    [SerializeField] private ParticleSystem _playerDust;
+    [SerializeField] private ParticleSystem _playerLanding;
 
     private Vector3 _dir;
-	private float _saveHight;
+    private float _saveHight;
 
-	private float _currentJumpPower;
-	private bool _isGround;
-	private bool _isFallSE;
+    private float _currentJumpPower;
+    private bool _isGround;
+    private bool _isFallSE;
 
-	int _score;
+    int _score;
 
-	public int GetScore => _score;
+    //現在のスコアを取得
+    public int GetScore => _score;
 
 
-	private void Start()
-	{
-		Initialize();
-	}
+    private void Start()
+    {
+        Initialize();
+    }
 
-	private void Update()
-	{
-		if (Input.GetKeyDown(_playerInput.JumpKey) && _isGround && _playerInput.IsStart) Jump();
-		if(!_isFallSE && _rb.velocity.y <= 0)
-		{
-			AudioPlayer.PlaySE("Player_Falling");
-			_isFallSE = true;
-		}	
-	}
+    private void Update()
+    {
+        if (Input.GetKeyDown(_playerInput.JumpKey) && _isGround && _playerInput.IsStart) Jump();
+        if (!_isFallSE && _rb.velocity.y <= 0)
+        {
+            AudioPlayer.PlaySE("Player_Falling");
+            _isFallSE = true;
+        }
+    }
     private void LateUpdate()
     {
-        if(this.transform.position.z != 0) transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+        if (this.transform.position.z != 0) transform.position = new Vector3(transform.position.x, transform.position.y, 0);
     }
 
     private void OnTriggerStay(Collider other)
-	{
-		if (other.CompareTag("Ground") && _rb.velocity.y <= 0) 
-		{
-			_isGround = true;
-			_score = (int)(this.transform.position.y - _saveHight);
-            ScoreManager.SetScore(_playerType, _score);
+    {
+        if (other.CompareTag("Ground") && _rb.velocity.y <= 0)
+        {
+            _isGround = true;
+            if (_score < (int)(this.transform.position.y - _saveHight))
+            {
+                _score = (int)(this.transform.position.y - _saveHight);
+                ScoreManager.SetScore(_playerType, _score);
+            }
         }
-	}
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Ground") && _rb.velocity.y <= 0)
@@ -61,30 +65,30 @@ public class PlayerJump : MonoBehaviour
     }
 
     private void Initialize()
-	{
-		_currentJumpPower = _jumpPower;
+    {
+        _currentJumpPower = _jumpPower;
         _saveHight = this.transform.position.y;
 
     }
 
-	//右左ジャンプ
-	private void Jump()
-	{
-		_isGround = false;
-		_isFallSE = false;
+    //右左ジャンプ
+    private void Jump()
+    {
+        _isGround = false;
+        _isFallSE = false;
 
         _rb.AddForce(Vector3.up * _currentJumpPower, ForceMode.Impulse);
-		AudioPlayer.PlaySE("Player_Jump");
+        AudioPlayer.PlaySE("Player_Jump");
         _playerDust.Play();
     }
 
-	public void JumpPowerUp(float value)
-	{
-		_currentJumpPower *= value;
-	}
+    public void JumpPowerUp(float value)
+    {
+        _currentJumpPower = _jumpPower * value;
+    }
 
-	public void JumpPowerReturn()
-	{
-		_currentJumpPower = _jumpPower;
-	}
+    public void JumpPowerReturn()
+    {
+        _currentJumpPower = _jumpPower;
+    }
 }
