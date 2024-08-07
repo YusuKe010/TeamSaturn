@@ -33,8 +33,7 @@ namespace FSM
 
         protected override void Stay()
         {
-            Debug.Log("オープニング中。Gキーを押してスタート");
-            if (Input.GetKeyDown(KeyCode.G)) TryChangeState(StateIdentifier.Playing);
+            TryChangeState(StateIdentifier.Playing);
         }
     }
 }
