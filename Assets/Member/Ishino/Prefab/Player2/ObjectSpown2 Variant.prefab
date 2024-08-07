@@ -73,6 +73,10 @@ PrefabInstance:
       value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 2517114978536099322, guid: f7bd6f077a943644fa3c381f89fb6756, type: 3}
+      propertyPath: CloudSpawn.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2517114978536099322, guid: f7bd6f077a943644fa3c381f89fb6756, type: 3}
       propertyPath: CloudSpawn.Array.data[0]
       value: 
       objectReference: {fileID: 4770027695226559949, guid: 5b0374cb18aba1d4a9cacdc3591ebf3c, type: 3}
@@ -80,6 +84,10 @@ PrefabInstance:
       propertyPath: CloudSpawn.Array.data[1]
       value: 
       objectReference: {fileID: 3732236520391069413, guid: c680f059ae0a18f459d749cde6c4d7a0, type: 3}
+    - target: {fileID: 2517114978536099322, guid: f7bd6f077a943644fa3c381f89fb6756, type: 3}
+      propertyPath: CloudSpawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 8447126292925820200, guid: 9a9955fa494c63842846bcb9045c52a5, type: 3}
     - target: {fileID: 2517114978536099322, guid: f7bd6f077a943644fa3c381f89fb6756, type: 3}
       propertyPath: ItemPrefab.Array.data[0]
       value: 
@@ -89,6 +97,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5222851497021045699, guid: 9865c1d3d40378c418c2ead18936d18d, type: 3}
     - target: {fileID: 2517114978536099322, guid: f7bd6f077a943644fa3c381f89fb6756, type: 3}
+      propertyPath: objectToSpawn.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2517114978536099322, guid: f7bd6f077a943644fa3c381f89fb6756, type: 3}
       propertyPath: objectToSpawn.Array.data[0]
       value: 
       objectReference: {fileID: 1129655553814955982, guid: 70522df77928f834193edb9c87259993, type: 3}
@@ -96,6 +108,10 @@ PrefabInstance:
       propertyPath: objectToSpawn.Array.data[1]
       value: 
       objectReference: {fileID: 3191124438236639235, guid: 6950c383320c67046b39d07c2d2e20b7, type: 3}
+    - target: {fileID: 2517114978536099322, guid: f7bd6f077a943644fa3c381f89fb6756, type: 3}
+      propertyPath: objectToSpawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 8171447217926982818, guid: 52cef4110b3ccb84c9088e32c5373eba, type: 3}
     - target: {fileID: 5808386395399918775, guid: f7bd6f077a943644fa3c381f89fb6756, type: 3}
       propertyPath: m_Name
       value: ObjectSpown2 Variant
