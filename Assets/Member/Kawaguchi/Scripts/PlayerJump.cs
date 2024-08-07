@@ -17,6 +17,9 @@ public class PlayerJump : MonoBehaviour
 	private bool _isGround;
 	private bool _isFallSE;
 
+	int _score;
+
+	public int GetScore => _score;
 
 
 	private void Start()
@@ -43,7 +46,8 @@ public class PlayerJump : MonoBehaviour
 		if (other.CompareTag("Ground") && _rb.velocity.y <= 0) 
 		{
 			_isGround = true;
-            ScoreManager.SetScore(_playerType, (int)(this.transform.position.y - _saveHight));
+			_score = (int)(this.transform.position.y - _saveHight);
+            ScoreManager.SetScore(_playerType, _score);
         }
 	}
     private void OnTriggerEnter(Collider other)
