@@ -34,11 +34,12 @@ public class ObjectSpawner : MonoBehaviour
     int SpawnObj;
     int Objectcount;
     private Vector3 SpawnPosition;
+    private Vector3 Fastposition;
 
     void Start()
     {
         SpawnPosition = transform.position;
-
+        Fastposition = transform.position;
         for (int i = 0; i <= FastSpown; i++)
         {
             SpawnObject();
@@ -69,18 +70,18 @@ public class ObjectSpawner : MonoBehaviour
             SpownPos = Random.Range(verticalOffsetXLeft,verticalOffsetXRight);
                 SpawnObj = Random.Range(0, objectToSpawn.Length);
                 // スポーンposition作成
-                spawnPosition = SpawnPosition + new Vector3(SpownPos, verticalOffsetY, 0);
+                spawnPosition = SpawnPosition + new Vector3(0, verticalOffsetY, 0);
+                spawnPosition.x = SpownPos;
             for (int i = 1; i <= SpownCount; i++)
             {
                 // オブジェクト生成
-                Instantiate(objectToSpawn[SpawnObj], spawnPosition, Quaternion.identity);
-
-                spawnPosition.x = 0;
+                Instantiate(objectToSpawn[SpawnObj], spawnPosition, Quaternion.identity);                
 
                 // スポーンpositionの位置を調整
-                SpawnPosition = spawnPosition;
-                
+                SpawnPosition = spawnPosition;                
+                spawnPosition.x = Fastposition.x;
             }
+            
             Objectcount += 1;
             SpawnItem();
         }
@@ -92,6 +93,7 @@ public class ObjectSpawner : MonoBehaviour
 
             // スポーンposition作成
             spawnPosition = SpawnPosition + new Vector3(SpownPos, verticalOffsetY, 0);
+            spawnPosition.x = SpownPos;
             for (int i = 1; i <= SpownCount; i++)
             {
                 
@@ -99,7 +101,7 @@ public class ObjectSpawner : MonoBehaviour
                 // オブジェクト生成
                 Instantiate(CloudSpawn[SpawnObj], spawnPosition, Quaternion.identity);
 
-                spawnPosition.x = 0;
+                spawnPosition.x = Fastposition.x;
 
                 // スポーンpositionの位置を調整
                 SpawnPosition = spawnPosition;
@@ -121,11 +123,12 @@ public class ObjectSpawner : MonoBehaviour
                 SpownPos = Random.Range(verticalOffsetXLeft, verticalOffsetXRight);
 
                 // スポーンposition作成
-                ItemSpawnPosition = SpawnPosition + new Vector3(SpownPos, ItemOffsetY, 0);
+                ItemSpawnPosition = SpawnPosition + new Vector3(0, ItemOffsetY, 0);
+                //ItemSpawnPosition.x = ItemOffsetY;
                     // オブジェクト生成
                     Instantiate(ItemPrefab[SpawnItemRnd], ItemSpawnPosition, Quaternion.identity);
 
-                ItemSpawnPosition.x = 0;
+                ItemSpawnPosition.x = Fastposition.x;
               
             }
         }
