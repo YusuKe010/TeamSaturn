@@ -113,7 +113,7 @@ public class ObjectSpawner : MonoBehaviour
         void SpawnItem()
         {
             Vector3 ItemSpawnPosition;
-            int　SpawnItemRnd = Random.Range(1, ItemPrefab.Length);
+            SpawnRnd = Random.Range(0, ItemPrefab.Length);
             int ItemRand = Random.Range(1,101);
             ItemOffsetY = verticalOffsetY+ verticalOffsetY*0.5f;
             if (ItemSpawnProbability >= ItemRand)
@@ -126,7 +126,7 @@ public class ObjectSpawner : MonoBehaviour
                 ItemSpawnPosition = SpawnPosition + new Vector3(0, ItemOffsetY, 0);
                 //ItemSpawnPosition.x = ItemOffsetY;
                     // オブジェクト生成
-                    Instantiate(ItemPrefab[SpawnItemRnd], ItemSpawnPosition, Quaternion.identity);
+                    Instantiate(ItemPrefab[SpawnRnd], ItemSpawnPosition, Quaternion.identity);
 
                 ItemSpawnPosition.x = Fastposition.x;
               
