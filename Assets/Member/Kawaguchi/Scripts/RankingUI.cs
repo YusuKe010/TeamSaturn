@@ -9,8 +9,11 @@ public class RankingUI : MonoBehaviour
     
     [SerializeField] private Text _nameText;
     [SerializeField] private Text _scoreText;
+    [SerializeField] private Text _player1Name;
+    [SerializeField] private Text _player2Name;
     [SerializeField] private int _rankingCount = 5;
-    [SerializeField] Ranking _rankings;
+    [SerializeField] private Ranking _rankings;
+
 
     public Action action;
 
@@ -21,8 +24,9 @@ public class RankingUI : MonoBehaviour
 
     private void IndicateRanking()
     {
+       
         _rankings.GetRanking.Sort((x, y) => y.score - x.score);
-        for (int i = 0; i < _rankingCount || i < _rankings.GetRanking.Count; i++)
+        for (int i = 0; i < _rankingCount; i++)
         {
             _nameText.text += $"{i + 1}ˆÊ {_rankings.GetRanking[i].name}\n";
             _scoreText.text += $"Score:{_rankings.GetRanking[i].score}m\n";
