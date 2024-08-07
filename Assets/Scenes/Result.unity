@@ -304,6 +304,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: RankingCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2398088288172180804, guid: 6e86cfc148914f948bbfd563d2a0fcf8, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398088288172180804, guid: 6e86cfc148914f948bbfd563d2a0fcf8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 3256989273234715220, guid: 6e86cfc148914f948bbfd563d2a0fcf8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452597660276686928, guid: 6e86cfc148914f948bbfd563d2a0fcf8, type: 3}
+      propertyPath: m_Color.a
+      value: 0.1764706
+      objectReference: {fileID: 0}
     - target: {fileID: 8723524738236860661, guid: 6e86cfc148914f948bbfd563d2a0fcf8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
