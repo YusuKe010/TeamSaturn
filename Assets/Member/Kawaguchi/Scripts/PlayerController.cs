@@ -15,10 +15,6 @@ public class PlayerController : MonoBehaviour
 	bool _isStart;
 	public bool IsStart => _isStart;
 
-    private void Start()
-    {
-        _isStart = true;
-    }
 
     private void Update()
 	{
