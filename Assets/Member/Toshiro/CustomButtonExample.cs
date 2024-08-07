@@ -11,7 +11,7 @@ using UnityEngine.EventSystems;
 public class CustomButtonExample : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler,
     IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
-    const float OnHoverSize = 1.05f;
+    const float OnHoverSize = 1.15f;
     const float OnPushSize = 0.95f;
 
     /// <summary>
@@ -37,11 +37,13 @@ public class CustomButtonExample : MonoBehaviour, IPointerEnterHandler, IPointer
     {
         AudioPlayer.PlaySE("SE_ButtonHover_Temp");
         ChangeScale(OnHoverSize);
+        GetComponent<Image>().color = Color.cyan;
     }
 
     void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
     {
         ChangeScale(1);
+        GetComponent<Image>().color = Color.white;
     }
 
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
