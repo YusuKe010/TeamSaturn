@@ -6,6 +6,7 @@ public class PlayerJump : MonoBehaviour
 	[SerializeField] private PlayerController _playerInput;
 
 	[SerializeField] private Rigidbody _rb;
+	[SerializeField] ScoreManager.Player _playerType;
 	private Vector3 _dir;
 	private float _saveHight;
 
@@ -33,7 +34,7 @@ public class PlayerJump : MonoBehaviour
 		if (other.CompareTag("Ground") && _rb.velocity.y <= 0) 
 		{
 			_isGround = true;
-            ScoreManager.SetScore((int)(this.transform.position.y - _saveHight));
+            ScoreManager.SetScore(_playerType, (int)(this.transform.position.y - _saveHight));
         }
 	}
 
