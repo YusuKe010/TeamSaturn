@@ -74,6 +74,22 @@ public class ScoreManager : MonoBehaviour
     }
 
     /// <summary>
+    /// スコアをセット。
+    /// </summary>
+    public static void SetScore(int value)
+    {
+        if (Instance != null)
+        {
+            Instance._score ??= new Score();
+            Instance._score.Value = value;
+        }
+        else
+        {
+            Debug.LogWarning($"{nameof(ScoreManager)}のインスタンスがシーン上に存在しないのでスコアをセット不可能。");
+        }
+    }
+
+    /// <summary>
     /// スコアを取得。
     /// </summary>
     public static int GetScoreValue()
