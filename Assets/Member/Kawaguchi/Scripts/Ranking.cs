@@ -22,10 +22,7 @@ public class Record
 
 public class Ranking : MonoBehaviour
 {
-    [SerializeField] private Text _nameText;
-    [SerializeField] private Text _scoreText;
     [SerializeField] private string accessKey;
-    [SerializeField] private int _rankingCount = 3;
     private List<Record> _ranking = new();
     public List<Record> GetRanking => _ranking;
 
@@ -49,12 +46,6 @@ public class Ranking : MonoBehaviour
                 _ranking = JsonUtility.FromJson<Records>(request.downloadHandler.text).records.ToList();
                 Debug.Log("データ受信成功！");
                 _ranking.Sort((x, y) => y.score - x.score);
-                for (int i = 0; i < _rankingCount || i < _ranking.Count; i++)
-                {
-                    _nameText.text += $"{i + 1}位 {_ranking[i].name}\n";
-                    _scoreText.text += $"Score:{_ranking[i].score}m\n";
-                    Debug.Log("Name:" + _ranking[i].name + "Score:" + _ranking[i].score);
-                }
             }
             else
             {
