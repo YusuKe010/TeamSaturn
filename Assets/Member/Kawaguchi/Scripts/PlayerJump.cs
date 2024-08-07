@@ -43,7 +43,7 @@ public class PlayerJump : MonoBehaviour
 		if (other.CompareTag("Ground") && _rb.velocity.y <= 0) 
 		{
 			_isGround = true;
-            //ScoreManager.SetScore(_playerType, (int)(this.transform.position.y - _saveHight));
+            ScoreManager.SetScore(_playerType, (int)(this.transform.position.y - _saveHight));
         }
 	}
     private void OnTriggerEnter(Collider other)
