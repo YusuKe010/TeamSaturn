@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using UnityEngine;
 
 namespace Title
@@ -12,6 +13,9 @@ namespace Title
         // 重複して処理が呼ばれないようのフラグ
         bool _running;
 
+        bool _player1Post;
+        bool _player2Post;
+
         protected override void OnOpenButtonClick()
         {
             if (_running) return;
@@ -22,7 +26,7 @@ namespace Title
 
         IEnumerator RunAsync()
         {
-            Ranking ranking = FindAnyObjectByType<Ranking>();
+
 
             UserNameHolder.SetPlayerName(UserNameHolder.Player.Player1, "プレイヤー1");
             UserNameHolder.SetPlayerName(UserNameHolder.Player.Player2, "プレイヤー2");
@@ -32,11 +36,28 @@ namespace Title
             UserNameHolder.SetPlayerName(UserNameHolder.Player.Player1, p1Name);
             UserNameHolder.SetPlayerName(UserNameHolder.Player.Player2, p2Name);
 
-            // 並列にする、あとまわし
-            yield return ranking.PostDataAsync(p1Name, 0, null);
-            yield return ranking.PostDataAsync(p2Name, 0, null);
+            // 並列
+            StartCoroutine(Player1Post(p1Name));
+            StartCoroutine(Player2Post(p2Name));
+
+            yield return new WaitUntil(() => _player1Post);
+            yield return new WaitUntil(() => _player2Post);
 
             SceneLoader.ChangeScene("InGame");
+        }
+
+        IEnumerator Player1Post(string playerName)
+        {
+            Ranking ranking = FindAnyObjectByType<Ranking>();
+            yield return ranking.PostDataAsync(playerName, 0, null);
+            _player1Post = true;
+        }
+
+        IEnumerator Player2Post(string playerName)
+        {
+            Ranking ranking = FindAnyObjectByType<Ranking>();
+            yield return ranking.PostDataAsync(playerName, 0, null);
+            _player2Post = true;
         }
     }
 }
