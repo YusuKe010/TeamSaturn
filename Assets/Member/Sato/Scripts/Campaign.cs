@@ -9,8 +9,14 @@ namespace Title
         [SerializeField] UnityEngine.UI.InputField _player1InputField;
         [SerializeField] UnityEngine.UI.InputField _player2InputField;
 
+        // d•¡‚µ‚Äˆ—‚ªŒÄ‚Î‚ê‚È‚¢‚æ‚¤‚Ìƒtƒ‰ƒO
+        bool _running;
+
         protected override void OnOpenButtonClick()
         {
+            if (_running) return;
+            _running = true;
+
             StartCoroutine(RunAsync());
         }
 
