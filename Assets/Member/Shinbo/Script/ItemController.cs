@@ -6,12 +6,14 @@
 /// </summary>
 public class ItemController : MonoBehaviour
 {
+    bool _itemGet;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && !_itemGet)
         {
             ItemGet();
+            _itemGet = true;
         }
     }
 

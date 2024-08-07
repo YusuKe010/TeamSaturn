@@ -8,7 +8,7 @@ public class Item_Jump : ItemController
 {
     GameObject _player;
     PlayerJump _playerJump;
-    [SerializeField, Tooltip("ジャンプ力の倍率")] float _jumpForceMultiplier;
+    [SerializeField, Tooltip("ジャンプ力の倍率")] float _jumpForceMultiplier = 1.5f;
     [SerializeField] float _releaseSeconds = 3;
     // Start is called before the first frame update
     void Start()
