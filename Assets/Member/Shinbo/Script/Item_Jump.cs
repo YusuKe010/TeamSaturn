@@ -7,7 +7,7 @@ using UnityEngine;
 public class Item_Jump : ItemController
 {
     GameObject[] _player;
-    PlayerJump[] _playerJump;
+    PlayerJump[] _playerJump = new PlayerJump[2];
     [SerializeField, Tooltip("ジャンプ力の倍率")] float _jumpForceMultiplier = 1.5f;
     [SerializeField] float _releaseSeconds = 3;
     Collider _collider;
