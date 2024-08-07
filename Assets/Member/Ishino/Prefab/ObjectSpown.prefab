@@ -47,9 +47,14 @@ MonoBehaviour:
   objectToSpawn:
   - {fileID: 1129655553814955982, guid: 02a98d1a0466b4b4293b078de74ac29a, type: 3}
   - {fileID: 3191124438236639235, guid: 0a013cc392beee04a94f5ef248b55f23, type: 3}
-  CloudSpawn: []
+  CloudSpawn:
+  - {fileID: 4770027695226559949, guid: a38bb617da70de24f83a8484f0b73c5d, type: 3}
+  - {fileID: 3732236520391069413, guid: afd0e3597b2ff944abdf48820e839753, type: 3}
+  ItemSpawn: []
   verticalOffsetY: 3
   verticalOffsetX: 3
+  SpownCount: 3
   FastSpown: 3
+  CloudSpown: 10
   PlayerPrefab: {fileID: 0}
   JumpKeyCode: 32
